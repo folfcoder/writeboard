@@ -91,9 +91,9 @@ class Window(QMainWindow):
         background = Image.new('RGBA', pil_im.size, (83, 83, 83))
         sc_img = Image.alpha_composite(background, pil_im)
 
-        text = pytesseract.image_to_string(sc_img, lang="dhw", config=f"--tessdata-dir {os.path.dirname(__file__)}/traineddata")
+        text = pytesseract.image_to_string(sc_img, lang="writeboard")
         ocr_data = pytesseract.image_to_data(
-            sc_img, lang="dhw", output_type=pytesseract.Output.DICT)
+            sc_img, lang="writeboard", output_type=pytesseract.Output.DICT)
         painter = QPainter(self.boundingbox)
         self.boundingbox.fill(Qt.transparent)
         for x in range(len(ocr_data["text"])):
