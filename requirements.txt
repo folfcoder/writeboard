@@ -1,0 +1,4 @@
+PyQt5==5.15.6
+Pillow==9.0.1
+pynput==1.7.6
+pytesseract==0.3.8
