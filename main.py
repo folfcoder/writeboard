@@ -3,10 +3,8 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PIL import Image
 from pynput.keyboard import Controller
-import sys
+import os, io, sys, threading
 import pytesseract
-import io
-import threading
 
 size = (800, 200)
 border = (8, 50, 8, 8) # (left, top, right, bottom)
@@ -93,7 +91,7 @@ class Window(QMainWindow):
         background = Image.new('RGBA', pil_im.size, (83, 83, 83))
         sc_img = Image.alpha_composite(background, pil_im)
 
-        text = pytesseract.image_to_string(sc_img, lang="dhw")
+        text = pytesseract.image_to_string(sc_img, lang="dhw", config=f"--tessdata-dir {os.path.dirname(__file__)}/traineddata")
         ocr_data = pytesseract.image_to_data(
             sc_img, lang="dhw", output_type=pytesseract.Output.DICT)
         painter = QPainter(self.boundingbox)
