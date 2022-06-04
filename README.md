@@ -1,7 +1,7 @@
 # Writeboard [WIP]
 Handwriting keyboard for Linux, similar to Windows 10's. Powered with Tesseract OCR.
 
-![](https://i.ibb.co/QFd0FXZ/Writeboard.gif)
+![Writeboard](https://user-images.githubusercontent.com/40331046/172014100-b4d90218-3385-4397-9ed1-838ceb9f9ab4.gif)
 
 ## Installation
 1. Follow [this tutorial](https://tesseract-ocr.github.io/tessdoc/Installation.html) to install Tesseract, then run:
