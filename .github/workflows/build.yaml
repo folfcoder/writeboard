@@ -1,0 +1,28 @@
+name: writeboard-build
+run-name: Build Writeboard
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libgl1-mesa-dev cmake qt6-declarative-dev
+      
+      - name: Run CMake
+        run: cmake -S . -B build
+
+      - name: Build
+        run: cd build && make
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: writeboard
+          path: build/writeboard
