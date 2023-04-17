@@ -4,6 +4,11 @@
   <img src="https://img.shields.io/github/license/folfcoder/writeboard?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Qt-%3E=6.2.4-brightgreen?style=for-the-badge&logo=qt" />
 </div>
+<br>
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/40331046/232194017-aa88ced7-fdb1-4d1a-9a3e-51df8886845c.gif" />
+</div>
+
 
 ## What is Writeboard?
 
@@ -22,6 +27,7 @@ Install dependencies:
 ```
 cmake
 gcc
+leptonica
 make
 tesseract
 qt6-declarative (>=6.2.4)
